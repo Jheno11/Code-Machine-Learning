@@ -11,3 +11,7 @@
 5. ResultsBlackRace is a file this study used to validate the model by using different race
 
 6. The implementation used is DEGdeseq2, ROC analysis, Combine dataset, ResultsWhiteRace and lastly ResultsBlackRace
+
+7. Link Raw Data for gene expression data set : https://xenabrowser.net/datapages/?dataset=TCGA-PRAD.star_counts.tsv&host=https%3A%2F%2Fgdc.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443
+
+8. Link Raw Data for phenotype : https://xenabrowser.net/datapages/?dataset=TCGA-PRAD.clinical.tsv&host=https%3A%2F%2Fgdc.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443
