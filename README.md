@@ -15,3 +15,15 @@
 7. Link Raw Data for gene expression data set : https://xenabrowser.net/datapages/?dataset=TCGA-PRAD.star_counts.tsv&host=https%3A%2F%2Fgdc.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443
 
 8. Link Raw Data for phenotype : https://xenabrowser.net/datapages/?dataset=TCGA-PRAD.clinical.tsv&host=https%3A%2F%2Fgdc.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443
+
+Step Implementation
+
+1. Use race ipynb file to separate the race using raw data
+
+2. next step do DEGdeseq2 to find the outlier gene for further analysis
+
+3. next use Combine file to combine the DEG dataset with raw data to get the value
+
+4. for some feature use ROC analysis to find more significant gene
+
+5. lastly use ResultsWhiteRace and ResultsBlackRace to find the model for white race and validate using black race
