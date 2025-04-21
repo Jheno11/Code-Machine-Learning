@@ -1,73 +1,95 @@
 # Code-Machine-Learning
 
-# 1. Title :
+## 1. Title
 
-- Project Name : Designing AI system to diagnose prostate cancer in race specific patients
+*Project Name:* Designing AI System to Diagnose Prostate Cancer in Race-Specific Patients  
+*Gene Expression:* HTSeq - Counts Gene Expression  
+*Phenotype:* GDC TCGA-PRAD Phenotype  
 
-- Gene Expression : HTSeq - Counts gene expression
+---
 
-- Phenotype : GDC TCGA-PRAD phenotype
+## 2. Code / Dataset Description
 
-# 2. Code/Dataset Description :
+This project consists of five different scripts to handle race-based grouping, Differentially Expressed Gene (DEG) analysis, ROC analysis, and the development of machine learning models for different racial groups (White and Black). The datasets include gene expression and phenotype data for prostate cancer diagnosis.
 
-- This paper used 5 different codes for separating race, DEG analysis, ROC analysis, White race model and Black race model
+---
 
-- This paper used gene expression and phenotype dataset for prostate cancer detection
+## 3. Dataset Information
 
-# 3. Dataset Information :
+- *Gene Expression Dataset:*  
+  Contains gene expression data from various prostate cancer samples.  
+  [Link](https://xenabrowser.net/datapages/?dataset=TCGA-PRAD.star_counts.tsv&host=https%3A%2F%2Fgdc.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443)
 
-- Gene Expression Dataset consist of the gene data from various samples, link : https://xenabrowser.net/datapages/?dataset=TCGA-PRAD.star_counts.tsv&host=https%3A%2F%2Fgdc.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443
+- *Phenotype Dataset:*  
+  Contains clinical information about the patients.  
+  [Link](https://xenabrowser.net/datapages/?dataset=TCGA-PRAD.clinical.tsv&host=https%3A%2F%2Fgdc.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443)
 
-- Phenotype Dataset consist of numerous clinical information about the patient, link : https://xenabrowser.net/datapages/?dataset=TCGA-PRAD.clinical.tsv&host=https%3A%2F%2Fgdc.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443
+---
 
-# 4. Code Infromation :
+## 4. Code Description
 
-- Race.ipynb file is a code for grouping the sample to white race
+| File Name              | Description |
+|------------------------|-------------|
+| Race.ipynb           | Groups the sample data by White race |
+| DEGdeseq2.ipynb      | Performs preprocessing and selects outlier genes using baseMean, padj, and log2FoldChange |
+| ROC analysis.ipynb   | Conducts ROC analysis to identify significant genes |
+| Combine dataset.ipynb| Combines DEG result with raw gene expression data using Ensembl_ID |
+| ResultsWhiteRace.py  | Builds a Gaussian Naive Bayes model for the White race group |
+| ResultsBlackRace.py  | Validates the model using Black race group data |
 
-- DEGdeseq2.ipynb file is a data preprocessing and feature selection method where this study use to find outlier gene base on basemean, padj and log2foldchange
+---
 
-- ROC analysis.ipynb file is a feature selection method where this study use to find outlier gene by finding significant value
+## 5. Usage Instructions
 
-- Combine dataset.ipynb is a file where this study used to combine the dataset value from deseq2 based on the Ensembl_ID
+1. *Load Datasets:*  
+   Use pandas to load gene expression and phenotype datasets.
 
-- ResultsWhiteRace.py is a file where this study used to check the result by using naive bayes
+2. *Separate by Race:*  
+   Use Race.ipynb to filter and separate samples by race (e.g., White).
 
-- ResultsBlackRace.py is a file this study used to validate the model by using different race
+3. *DEG Analysis:*  
+   Use DEGdeseq2.ipynb for preprocessing and identifying outlier genes.
 
-# 5. Usage Instruction :
+4. *Combine Datasets:*  
+   Use Combine dataset.ipynb to merge DEG results with raw data based on Ensembl_ID.
 
-- Load gene expression and phenotype dataset using pandas library and separate the data by race using Race.ipynb file
+5. *ROC Analysis:*  
+   Use ROC analysis.ipynb to analyze data139.csv and select significant genes.
 
-- Load the specific race dataset from Race file to perform data preprocessing and DEG to find outlier gene using DEGdeseq2.ipynb file
+6. *Modeling - White Race:*  
+   Load the following CSV files in ResultsWhiteRace.py:
+   - data13.csv
+   - data139.csv
+   - data4.csv
+   - data7.csv
 
-- Load data139.csv to perform ROC analysis using ROC analysis.ipynb file
+7. *Model Validation - Black Race:*  
+   Load the following CSV files in ResultsBlackRace.py:
+   - Datablack13.csv
+   - Datablack139.csv
+   - Datablack7.csv
+   - Datablack4.csv
 
-- load data13.csv, data139.csv, data4.csv and data7.csv using ResultsWhiteRace.py dataset to perform white race modelling with Gaussian Naive Bayes Algorithm
+---
 
-- load Datablack13.csv, Datablack13.csv, Datablack7.csv and Datablack4.csv using ResultsBlackRace.py to perform validation on another race
+## 6. Requirements
+pip install pandas numpy scikit-learn imbalanced-learn
 
-# 6. Requirement :
+## 7. Methodology for Code Usage
+   1. Use Race.ipynb to filter data by race.
 
-- Pandas Library
+   2. Perform DEG analysis using DEGdeseq2.ipynb.
 
-- Numpy Library
+   3. Use Combine dataset.ipynb to merge DEG results with raw data.
 
-- scikit-learn Library
+   4. For 139 features, run ROC analysis.ipynb to further filter genes.
 
-- imbalance-learn Library
+   5. Train the model using ResultsWhiteRace.py.
 
-# 7. Methodology for Code Usage :
+   6. Validate the model using ResultsBlackRace.py.
 
-- Use race.ipynb file to separate the race using gene expression and phenotype dataset
+## 8. Citation
+Not applicable.
 
-- next step do DEGdeseq2 to find the outlier gene for further analysis
-
-- next use Combine file to combine the DEG dataset with raw data to get the value
-
-- for 139 features use ROC analysis to find more significant gene
-
-- lastly use ResultsWhiteRace and ResultsBlackRace to find the model for white race and validate using black race
-
-# 8. Citation - Not Applicable
-
-# 9. License & Contribution Guidelines - Not Applicable
+## 9. License & Contribution Guidelines
+Not applicable.
