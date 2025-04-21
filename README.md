@@ -73,7 +73,13 @@ This project consists of five different scripts to handle race-based grouping, D
 ---
 
 ## 6. Requirements
-pip install pandas numpy scikit-learn imbalanced-learn
+pip install pandas numpy scikit-learn imbalanced-learn. 
+
+- pandas for load dataset
+
+- Scikit-learn for GaussianNB, LabelEncoder, Traintestsplit, gridsearch, accuracy score and classification report
+
+- imbalanced-learn for using balancing technique
 
 ## 7. Methodology for Code Usage
    1. Use Race.ipynb to filter data by race.
