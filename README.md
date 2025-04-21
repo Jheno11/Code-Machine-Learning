@@ -1,38 +1,52 @@
 # Code-Machine-Learning
 
-Dataset Title :
+# 1. Title :
+
+- Project Name : Designing AI system to diagnose prostate cancer in race specific patients
 
 - Gene Expression : HTSeq - Counts gene expression
 
 - Phenotype : GDC TCGA-PRAD phenotype
 
-Code/Dataset Description :
+# 2. Code/Dataset Description :
 
-- Race file is a code for grouping the sample to white race
+- This paper used 5 different codes for separating race, DEG analysis, ROC analysis, White race model and Black race model
 
-- DEGdeseq2 file is a feature selection method where this study use to find outlier gene base on basemean, padj and log2foldchange
+- This paper used gene expression and phenotype dataset for prostate cancer detection
 
-- ROC analysis file is a feature selection method where this study use to find outlier gene by finding significant value
+# 3. Dataset Information :
 
-- Combine dataset is a file where this study used to combine the dataset value from deseq2 based on the Ensembl_ID
+- Gene Expression Dataset consist of the gene data from various samples, link : https://xenabrowser.net/datapages/?dataset=TCGA-PRAD.star_counts.tsv&host=https%3A%2F%2Fgdc.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443
 
-- ResultsWhiteRace is a file where this study used to check the result by using naive bayes
+- Phenotype Dataset consist of numerous clinical information about the patient, link : https://xenabrowser.net/datapages/?dataset=TCGA-PRAD.clinical.tsv&host=https%3A%2F%2Fgdc.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443
 
-- ResultsBlackRace is a file this study used to validate the model by using different race
+# 4. Code Infromation :
 
-- Gene Expression Dataset consist of the gene data from various samples, link provided below
+- Race.ipynb file is a code for grouping the sample to white race
 
-- Phenotype Dataset consist of numerous clinical information about the patient, link provided below
+- DEGdeseq2.ipynb file is a data preprocessing and feature selection method where this study use to find outlier gene base on basemean, padj and log2foldchange
 
-- Link Raw Data for gene expression data set : https://xenabrowser.net/datapages/?dataset=TCGA-PRAD.star_counts.tsv&host=https%3A%2F%2Fgdc.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443
+- ROC analysis.ipynb file is a feature selection method where this study use to find outlier gene by finding significant value
 
-- Link Raw Data for phenotype : https://xenabrowser.net/datapages/?dataset=TCGA-PRAD.clinical.tsv&host=https%3A%2F%2Fgdc.xenahubs.net&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443
+- Combine dataset.ipynb is a file where this study used to combine the dataset value from deseq2 based on the Ensembl_ID
 
-Usage Instruction :
+- ResultsWhiteRace.py is a file where this study used to check the result by using naive bayes
 
-- The code can be used using python with pandas library to load dataset
+- ResultsBlackRace.py is a file this study used to validate the model by using different race
 
-Requirement :
+# 5. Usage Instruction :
+
+- Load gene expression and phenotype dataset using pandas library and separate the data by race using Race.ipynb file
+
+- Load the specific race dataset from Race file to perform data preprocessing and DEG to find outlier gene using DEGdeseq2.ipynb file
+
+- Load data139.csv to perform ROC analysis using ROC analysis.ipynb file
+
+- load data13.csv, data139.csv, data4.csv and data7.csv using ResultsWhiteRace.py dataset to perform white race modelling with Gaussian Naive Bayes Algorithm
+
+- load Datablack13.csv, Datablack13.csv, Datablack7.csv and Datablack4.csv using ResultsBlackRace.py to perform validation on another race
+
+# 6. Requirement :
 
 - Pandas Library
 
@@ -42,14 +56,18 @@ Requirement :
 
 - imbalance-learn Library
 
-Methodology for Code Usage :
+# 7. Methodology for Code Usage :
 
-1. Use race ipynb file to separate the race using raw data
+- Use race.ipynb file to separate the race using gene expression and phenotype dataset
 
-2. next step do DEGdeseq2 to find the outlier gene for further analysis
+- next step do DEGdeseq2 to find the outlier gene for further analysis
 
-3. next use Combine file to combine the DEG dataset with raw data to get the value
+- next use Combine file to combine the DEG dataset with raw data to get the value
 
-4. for some feature use ROC analysis to find more significant gene
+- for 139 features use ROC analysis to find more significant gene
 
-5. lastly use ResultsWhiteRace and ResultsBlackRace to find the model for white race and validate using black race
+- lastly use ResultsWhiteRace and ResultsBlackRace to find the model for white race and validate using black race
+
+# 8. Citation - Not Applicable
+
+# 9. License & Contribution Guidelines - Not Applicable
