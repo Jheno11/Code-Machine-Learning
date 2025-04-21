@@ -3,8 +3,8 @@
 ## 1. Title
 
 *Project Name:* Designing AI System to Diagnose Prostate Cancer in Race-Specific Patients  
-*Gene Expression:* HTSeq - Counts Gene Expression  
-*Phenotype:* GDC TCGA-PRAD Phenotype  
+*Gene Expression data:* HTSeq - Counts Gene Expression  
+*Phenotype data:* GDC TCGA-PRAD Phenotype  
 
 ---
 
