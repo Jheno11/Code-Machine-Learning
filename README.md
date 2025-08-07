@@ -99,3 +99,7 @@ Not applicable.
 
 ## 9. License & Contribution Guidelines
 Not applicable.
+
+## 10. Code Repository or DOI
+
+[![DOI](https://zenodo.org/badge/959078210.svg)](https://doi.org/10.5281/zenodo.16760969)
